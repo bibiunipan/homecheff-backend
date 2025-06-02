@@ -1,0 +1,437 @@
+{
+  "receitas": [
+    {
+      "nome": "Arroz com Feijão",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "40 minutos",
+      "ingredientes": [
+        "2 xícaras de arroz",
+        "2 xícaras de feijão",
+        "1 cebola picada",
+        "2 dentes de alho",
+        "Sal a gosto",
+        "Óleo"
+      ],
+      "modo_preparo": [
+        "Cozinhe o feijão na panela de pressão por cerca de 30 minutos.",
+        "Refogue a cebola e o alho em uma panela com óleo.",
+        "Adicione o arroz, refogue por 2 minutos e adicione água quente.",
+        "Cozinhe até secar a água e o arroz estar macio.",
+        "Tempere o feijão e sirva com o arroz."
+      ]
+    },
+    {
+      "nome": "Estrogonofe de Frango",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "30 minutos",
+      "ingredientes": [
+        "500g de peito de frango cortado em cubos",
+        "1 cebola picada",
+        "2 colheres de sopa de ketchup",
+        "1 colher de sopa de mostarda",
+        "1 caixa de creme de leite",
+        "Sal a gosto",
+        "Óleo"
+      ],
+      "modo_preparo": [
+        "Refogue a cebola no óleo até dourar.",
+        "Adicione o frango e cozinhe até dourar.",
+        "Junte o ketchup, a mostarda e misture bem.",
+        "Acrescente o creme de leite, misture e desligue o fogo.",
+        "Sirva com arroz branco e batata palha."
+      ]
+    },
+    {
+      "nome": "Bolo de Cenoura com Cobertura de Chocolate",
+      "tipo_refeiçao":["Lanche","Sobremesa"],
+      "tempo_preparo": "50 minutos",
+      "ingredientes": [
+        "3 cenouras médias",
+        "3 ovos",
+        "1 xícara de óleo",
+        "2 xícaras de açúcar",
+        "2 e 1/2 xícaras de farinha de trigo",
+        "1 colher de sopa de fermento",
+        "4 colheres de sopa de achocolatado",
+        "2 colheres de sopa de manteiga",
+        "2 colheres de sopa de leite"
+      ],
+      "modo_preparo": [
+        "Bata no liquidificador as cenouras, ovos e óleo.",
+        "Despeje em uma tigela e misture com o açúcar e a farinha.",
+        "Adicione o fermento e misture.",
+        "Leve ao forno pré-aquecido a 180°C por 40 minutos.",
+        "Para a cobertura, misture o achocolatado, manteiga e leite em uma panela.",
+        "Ferva até engrossar e despeje sobre o bolo pronto."
+      ]
+    },
+    {
+      "nome": "Peixe Assado com Legumes",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "45 minutos",
+      "ingredientes": [
+        "4 filés de peixe",
+        "1 cenoura em rodelas",
+        "1 abobrinha em rodelas",
+        "1 cebola fatiada",
+        "1 limão",
+        "Azeite",
+        "Sal e pimenta a gosto"
+      ],
+      "modo_preparo": [
+        "Tempere os filés com sal, pimenta e suco de limão.",
+        "Em uma assadeira, coloque os legumes e os filés por cima.",
+        "Regue com azeite e cubra com papel alumínio.",
+        "Leve ao forno a 200°C por 30 minutos.",
+        "Retire o papel e deixe dourar por 10 minutos."
+      ]
+    },
+    {
+      "nome": "Carne de Panela com Legumes",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "1 hora",
+      "ingredientes": [
+        "500g de carne em cubos",
+        "2 batatas picadas",
+        "1 cenoura em rodelas",
+        "1 cebola picada",
+        "2 dentes de alho",
+        "1 tomate picado",
+        "Sal e pimenta a gosto",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Refogue o alho e a cebola no azeite.",
+        "Adicione a carne e doure bem.",
+        "Junte os legumes e o tomate.",
+        "Adicione água quente até cobrir e cozinhe por 40 minutos na pressão.",
+        "Acerte o sal e sirva."
+      ]
+    },
+    {
+      "nome": "Lombo Suíno Assado com Batatas",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "1 hora e 20 minutos",
+      "ingredientes": [
+        "1kg de lombo suíno",
+        "4 batatas cortadas em cubos",
+        "3 dentes de alho",
+        "Suco de 1 limão",
+        "Sal, pimenta e alecrim",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Tempere o lombo com alho, sal, limão, pimenta e alecrim.",
+        "Coloque em uma assadeira com as batatas ao redor.",
+        "Regue com azeite e cubra com papel alumínio.",
+        "Asse em forno a 200°C por 1 hora.",
+        "Retire o papel e asse por mais 20 minutos para dourar."
+      ]
+    },
+    {
+      "nome": "Salada de Grão-de-Bico",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "25 minutos",
+      "ingredientes": [
+        "2 xícaras de grão-de-bico cozido",
+        "1 tomate picado",
+        "1 pepino picado",
+        "1/2 cebola roxa picada",
+        "Azeite, limão, sal e cheiro-verde"
+      ],
+      "modo_preparo": [
+        "Misture todos os ingredientes em uma tigela.",
+        "Tempere com azeite, limão e sal.",
+        "Sirva gelado."
+      ]
+    },
+    {
+      "nome": "Carne Moída com Abóbora",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "35 minutos",
+      "ingredientes": [
+        "400g de carne moída",
+        "300g de abóbora em cubos",
+        "1 cebola picada",
+        "2 dentes de alho",
+        "Sal, pimenta e cheiro-verde"
+      ],
+      "modo_preparo": [
+        "Refogue a cebola e o alho.",
+        "Adicione a carne moída e cozinhe até dourar.",
+        "Acrescente a abóbora, tempere e cozinhe até ficar macia.",
+        "Finalize com cheiro-verde."
+      ]
+    },
+    {
+      "nome": "Pão de queijo",
+      "tipo_refeiçao":["Lanche","Café da manhã"],
+      "tempo_preparo": "1 hora",
+      "ingredientes": [
+        "500 g de polvilho doce",
+        "250 ml de leite integral",
+        "1 colher/sopa rasa de sal",
+        "1 prato cheio (350 g) de queijo meia cura e/ou mussarela ralado no ralador (quanto mais queijo, mais gostoso o pão vai ficar)",
+        "1 ou 2 ovos",
+        "1/2 copo de óleo",
+        "1 pacote de queijo ralado parmesão"
+      ],
+      "modo_preparo": [
+        "Primeiro, coloque o leite e o óleo em uma panela pra esquentar, desligue o fogo imediatamente assim que começar a ferver (você verá umas bolinhas do leite subindo).",
+        "Em uma tigela grande, coloque o polvilho e o sal, e misture bem, logo em seguida, despeje o conteúdo da panela ainda quente, misture bem, primeiro com uma colher e depois com a mão.",
+        "Em seguida coloque o queijo ralado e um pouco do queijo do prato e também 1 ovo, continue misturando bem.",
+        "Coloque o resto do queijo e verifique se a massa esta com uma textura boa, nem muito oleosa e nem muito seca.",
+        "Se você sentir que está muito seca, coloque outro ovo, se ela ficar oleosa, coloque mais um pouco de polvilho.",
+        "Agora é só fazer bolinhas e colocar na assadeira, deixando um pequeno espaço entre um pão e o outro.",
+        "Deixe no forno em temperatura média (230°) até dourar um pouco."
+      ]
+    },
+    {
+      "nome": "Lasanha á bolonhesa",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "50 minutos",
+      "ingredientes": [
+        "500 g de massa de lasanha",
+        "500 g de carne moída",
+        "2 caixas de creme de leite",
+        "3 colheres de manteiga",
+        "3 colheres de farinha de trigo",
+        "500 g de presunto",
+        "500 g de mussarela",
+        "500 g de mussarela",
+        "2 copos de leite",
+        "1 cebola ralada",
+        "3 colheres de óleo",
+        "1 caixa de molho de tomate",
+        "3 dentes de alho amassados",
+        "1 pacote de queijo ralado"
+      ],
+      "modo_preparo": [
+        "Cozinhe a massa segundo as orientações do fabricante, despeje em um refratário com água gelada para não grudar e reserve.",
+        "Refogue o alho, a cebola, a carne moída, o molho de tomate, deixe cozinhar por 3 minutos e reserve.",
+        "Derreta a margarina, coloque as 3 colheres de farinha de trigo e mexa.",
+        "Despeje o leite aos poucos e continue mexendo.",
+        "Por último, coloque o creme de leite, mexa por 1 minuto e desligue o fogo.",
+        "Despeje uma parte do molho à bolonhesa em um refratário, a metade da massa, a metade do presunto, a metade da mussarela, todo o molho branco e o restante da massa.",
+        "Repita as camadas até a borda do recipiente.",
+        "Finalize com o queijo ralado e leve ao forno alto (220° C), preaquecido, por cerca de 20 minutos."
+      ]
+    },
+    {
+      "nome": "Macarrão alho e óleo",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "14 min",
+      "ingredientes": [
+        "1 pacote de macarrão 500 g ",
+        "1/2 tablete de manteiga (não use margarina)",
+        "1 colher (sopa) de azeite extra virgem",
+        "ervas (manjericão, orégano, salsa, cebolinha, tomilho, a gosto)",
+        "Sal a gosto",
+        "1 dente de alho"
+      ],
+      "modo_preparo": [
+        "Cozinhe o macarrão",
+        "Na frigideira quente coloque a manteiga, o azeite, e alho",
+        "Colocar o maarrão na frigideira o sal a gosto e as ervas",
+        "Sirva o macarrão e coloque ervas a gosto em cima."
+      ]
+    },
+    {
+      "nome": "Macarrão á bolosenha",
+      "tipo_refeiçao":["almoço","jantar"],
+      "tempo_preparo": "45 minutos",
+      "ingredientes": [
+        "1 Cebola",
+        "1 colher de sopa de azeite de oliva",
+        "5 azeitonas verdes picadas",
+        "2 latas de molho de tomate pronto",
+        "500g de Macarrão",
+        "500g de Carne Moída",
+        "Queijo Mussarela ralado",
+        "Sal",
+        "Tempero a gosto"
+      ],
+      "modo_preparo": [
+        "Pique a cebola, refogue por alguns minutos em uma panela com azeite até dourar a cebola, mexendo para não queimar.",
+        "Misture a carne moída, deixe cozinhar por alguns minutos.",
+        "Coloque na panela da carne, o molho de tomate, tempero e sal a gosto e deixe cozinhar por 30 minutos",
+        "Prepare o macarrão, misture o molho ao macarrão e sirva.",
+        "Acompanhamento sugerido: queijo ralado"
+      ]
+    },
+    {
+      "nome": "Receita Saudável 10",
+      "tipo_refeiçao":["Café da manhã","Lanche"],
+      "tempo_preparo": "10 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 11",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "40 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 12",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "50 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 13",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "60 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 14",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "70 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 15",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "30 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 16",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "40 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 17",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "50 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 18",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "60 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 19",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "70 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    },
+    {
+      "nome": "Receita Saudável 20",
+      "tipo_refeiçao":[],
+      "tempo_preparo": "30 minutos",
+      "ingredientes": [
+        "1 ingrediente saudável A",
+        "1 ingrediente saudável B",
+        "Temperos naturais",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes.",
+        "Cozinhe com azeite até ficar pronto.",
+        "Sirva com acompanhamento saudável."
+      ]
+    }]}
