@@ -2,7 +2,7 @@
   "receitas": [
     {
       "nome": "Arroz com Feijão",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "40 minutos",
       "ingredientes": [
         "2 xícaras de arroz",
@@ -22,7 +22,7 @@
     },
     {
       "nome": "Estrogonofe de Frango",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "30 minutos",
       "ingredientes": [
         "500g de peito de frango cortado em cubos",
@@ -43,7 +43,7 @@
     },
     {
       "nome": "Bolo de Cenoura com Cobertura de Chocolate",
-      "tipo_refeiçao":["Lanche","Sobremesa"],
+      "tipo_refeicao": ["Lanche", "Sobremesa"],
       "tempo_preparo": "50 minutos",
       "ingredientes": [
         "3 cenouras médias",
@@ -67,7 +67,7 @@
     },
     {
       "nome": "Peixe Assado com Legumes",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "45 minutos",
       "ingredientes": [
         "4 filés de peixe",
@@ -88,7 +88,7 @@
     },
     {
       "nome": "Carne de Panela com Legumes",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "1 hora",
       "ingredientes": [
         "500g de carne em cubos",
@@ -110,7 +110,7 @@
     },
     {
       "nome": "Lombo Suíno Assado com Batatas",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "1 hora e 20 minutos",
       "ingredientes": [
         "1kg de lombo suíno",
@@ -130,7 +130,7 @@
     },
     {
       "nome": "Salada de Grão-de-Bico",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "25 minutos",
       "ingredientes": [
         "2 xícaras de grão-de-bico cozido",
@@ -147,7 +147,7 @@
     },
     {
       "nome": "Carne Moída com Abóbora",
-      "tipo_refeiçao":["almoço","jantar"],
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "35 minutos",
       "ingredientes": [
         "400g de carne moída",
@@ -164,31 +164,30 @@
       ]
     },
     {
-      "nome": "Pão de queijo",
-      "tipo_refeiçao":["Lanche","Café da manhã"],
+      "nome": "Pão de Queijo",
+      "tipo_refeicao": ["Lanche", "Café da manhã"],
       "tempo_preparo": "1 hora",
       "ingredientes": [
         "500 g de polvilho doce",
         "250 ml de leite integral",
         "1 colher/sopa rasa de sal",
-        "1 prato cheio (350 g) de queijo meia cura e/ou mussarela ralado no ralador (quanto mais queijo, mais gostoso o pão vai ficar)",
+        "1 prato cheio (350 g) de queijo meia cura e/ou mussarela ralado",
         "1 ou 2 ovos",
         "1/2 copo de óleo",
         "1 pacote de queijo ralado parmesão"
       ],
       "modo_preparo": [
-        "Primeiro, coloque o leite e o óleo em uma panela pra esquentar, desligue o fogo imediatamente assim que começar a ferver (você verá umas bolinhas do leite subindo).",
-        "Em uma tigela grande, coloque o polvilho e o sal, e misture bem, logo em seguida, despeje o conteúdo da panela ainda quente, misture bem, primeiro com uma colher e depois com a mão.",
-        "Em seguida coloque o queijo ralado e um pouco do queijo do prato e também 1 ovo, continue misturando bem.",
-        "Coloque o resto do queijo e verifique se a massa esta com uma textura boa, nem muito oleosa e nem muito seca.",
-        "Se você sentir que está muito seca, coloque outro ovo, se ela ficar oleosa, coloque mais um pouco de polvilho.",
-        "Agora é só fazer bolinhas e colocar na assadeira, deixando um pequeno espaço entre um pão e o outro.",
-        "Deixe no forno em temperatura média (230°) até dourar um pouco."
+        "Coloque o leite e o óleo em uma panela para esquentar e desligue assim que começar a ferver.",
+        "Em uma tigela, misture o polvilho e o sal, despeje o conteúdo quente e misture com colher e depois com a mão.",
+        "Adicione o queijo ralado e os ovos, misturando bem.",
+        "Verifique a textura da massa e ajuste com mais ovo ou polvilho, se necessário.",
+        "Modele bolinhas e coloque em assadeira com espaço entre elas.",
+        "Asse em forno médio (230°C) até dourar."
       ]
     },
     {
-      "nome": "Lasanha á bolonhesa",
-      "tipo_refeiçao":["almoço","jantar"],
+      "nome": "Lasanha à Bolonhesa",
+      "tipo_refeicao": ["almoço", "jantar"],
       "tempo_preparo": "50 minutos",
       "ingredientes": [
         "500 g de massa de lasanha",
@@ -206,56 +205,13 @@
         "1 pacote de queijo ralado"
       ],
       "modo_preparo": [
-        "Cozinhe a massa segundo as orientações do fabricante, despeje em um refratário com água gelada para não grudar e reserve.",
-        "Refogue o alho, a cebola, a carne moída, o molho de tomate, deixe cozinhar por 3 minutos e reserve.",
-        "Derreta a margarina, coloque as 3 colheres de farinha de trigo e mexa.",
-        "Despeje o leite aos poucos e continue mexendo.",
-        "Por último, coloque o creme de leite, mexa por 1 minuto e desligue o fogo.",
-        "Despeje uma parte do molho à bolonhesa em um refratário, a metade da massa, a metade do presunto, a metade da mussarela, todo o molho branco e o restante da massa.",
-        "Repita as camadas até a borda do recipiente.",
-        "Finalize com o queijo ralado e leve ao forno alto (220° C), preaquecido, por cerca de 20 minutos."
-      ]
-    },
-    {
-      "nome": "Macarrão alho e óleo",
-      "tipo_refeiçao":["almoço","jantar"],
-      "tempo_preparo": "14 min",
-      "ingredientes": [
-        "1 pacote de macarrão 500 g ",
-        "1/2 tablete de manteiga (não use margarina)",
-        "1 colher (sopa) de azeite extra virgem",
-        "ervas (manjericão, orégano, salsa, cebolinha, tomilho, a gosto)",
-        "Sal a gosto",
-        "1 dente de alho"
-      ],
-      "modo_preparo": [
-        "Cozinhe o macarrão",
-        "Na frigideira quente coloque a manteiga, o azeite, e alho",
-        "Colocar o maarrão na frigideira o sal a gosto e as ervas",
-        "Sirva o macarrão e coloque ervas a gosto em cima."
-      ]
-    },
-    {
-      "nome": "Macarrão á bolosenha",
-      "tipo_refeiçao":["almoço","jantar"],
-      "tempo_preparo": "45 minutos",
-      "ingredientes": [
-        "1 Cebola",
-        "1 colher de sopa de azeite de oliva",
-        "5 azeitonas verdes picadas",
-        "2 latas de molho de tomate pronto",
-        "500g de Macarrão",
-        "500g de Carne Moída",
-        "Queijo Mussarela ralado",
-        "Sal",
-        "Tempero a gosto"
-      ],
-      "modo_preparo": [
-        "Pique a cebola, refogue por alguns minutos em uma panela com azeite até dourar a cebola, mexendo para não queimar.",
-        "Misture a carne moída, deixe cozinhar por alguns minutos.",
-        "Coloque na panela da carne, o molho de tomate, tempero e sal a gosto e deixe cozinhar por 30 minutos",
-        "Prepare o macarrão, misture o molho ao macarrão e sirva.",
-        "Acompanhamento sugerido: queijo ralado"
+        "Cozinhe a massa conforme as instruções, coloque em refratário com água gelada e reserve.",
+        "Refogue alho, cebola, carne moída e molho de tomate por 3 minutos, reserve.",
+        "Derreta manteiga, acrescente farinha, leite e creme de leite, mexendo até engrossar.",
+        "Monte camadas: massa, presunto, molho branco, molho bolonhesa, mussarela, queijo ralado.",
+        "Repita as camadas e finalize com queijo ralado.",
+        "Asse em forno médio por 40 minutos."
       ]
     }
-    }
+  ]
+}
