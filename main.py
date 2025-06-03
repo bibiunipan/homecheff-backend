@@ -69,6 +69,3 @@ def detalhes_receita(nome: str = Query(..., description="Nome exato da receita")
         if r["nome"].lower() == nome.lower():
             return r
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
-
-            return r
-    raise HTTPException(status_code=404, detail="Receita não encontrada.")
