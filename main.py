@@ -45,7 +45,11 @@ def buscar_receitas(
 
         # Checa ingrediente parcial
         if ingrediente:
-            if not any(ingrediente.lower() in i.lower() for i in r.get('ingredientes', [])):
+           lista_ingredientes = [i.strip() for i in ingrediente.split(",")]
+            if not all(
+                any(ing.lower() in i.lower() for i in r.get('ingredientes', []))
+                for ing in lista_ingredientes
+            ):
                 continue
 
         # Checa tempo de preparo convertendo para minutos
