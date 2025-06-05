@@ -3,8 +3,46 @@ from typing import List, Optional
 import json
 import os
 import re
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from supabase import create_client, Client
+
+# Substitua pelas suas chaves do projeto Supabase
+SUPABASE_URL = "https://<seu-projeto>.supabase.co"
+SUPABASE_KEY = "<sua-anon-key>"
+
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 app = FastAPI()
+
+class Cadastro(BaseModel):
+    email: str
+    senha: str
+    nome: str
+    restricoes: str
+@app.post("/cadastro")
+def cadastrar_usuario(dados: Cadastro):
+    # 1. Criar usuário no auth (email e senha)
+    resp = supabase.auth.sign_up({
+        "email": dados.email,
+        "password": dados.senha
+    })
+
+    if not resp.user:
+        raise HTTPException(status_code=400, detail="Erro ao criar usuário")
+
+    user_id = resp.user.id  # pega o ID criado no auth.users
+
+    # 2. Criar perfil na sua tabela personalizada
+    perfil = {
+        "id": user_id,
+        "nome": dados.nome,
+        "restricoes": dados.restricoes
+    }
+
+    supabase.table("perfis").insert(perfil).execute()
+
+    return {"mensagem": "Usuário cadastrado com sucesso"}
 
 ARQUIVO_RECEITAS = os.path.join(os.path.dirname(__file__), "receitas.json")
 
