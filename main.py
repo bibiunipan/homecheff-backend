@@ -8,8 +8,8 @@ from pydantic import BaseModel
 from supabase import create_client, Client
 
 # Substitua pelas suas chaves do projeto Supabase
-SUPABASE_URL = "https://<seu-projeto>.supabase.co"
-SUPABASE_KEY = "<sua-anon-key>"
+SUPABASE_URL = "https://ytztgkuzvdmlnbzelmct.supabase.co"
+SUPABASE_KEY = "<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0enRna3V6dmRtbG5iemVsbWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwODAyODEsImV4cCI6MjA2NDY1NjI4MX0.UFLTaoKbkenLhL_xu8Zdi3Zv73qR0t9M-KE_Jym4r3k>"
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
