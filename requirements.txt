@@ -2,5 +2,9 @@ fastapi==0.95.2
 uvicorn[standard]==0.22.0
 python-multipart==0.0.6
 supabase==2.15.2
+<<<<<<< HEAD
+=======
+postgrest-py==0.10.6
+>>>>>>> b5a560a2431cc202c158523996872bc6c3d24214
 
 
