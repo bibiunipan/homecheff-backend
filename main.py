@@ -5,8 +5,23 @@ import os
 import re
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Defina os domínios que poderão acessar sua API
+origins = [
+    "http://localhost:5500",          # para testes locais, se precisar
+    "https://bibiunipan.github.io/HomeCheff/",  # domínio do seu front no Render/Netlify/Vercel/etc
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 ARQUIVO_RECEITAS = os.path.join(os.path.dirname(__file__), "receitas.json")
 
