@@ -1,4 +1,4 @@
-fastapi==0.95.2
+fastapi[all]
 uvicorn[standard]==0.22.0
 python-multipart==0.0.6
 supabase==2.15.2
