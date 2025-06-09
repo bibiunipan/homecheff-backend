@@ -9,15 +9,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Defina os domínios que poderão acessar sua API
+# Permitindo o frontend do GitHub Pages
 origins = [
-    "http://localhost:5500",          # para testes locais, se precisar
-    "https://bibiunipan.github.io/HomeCheff/",  # domínio do seu front no Render/Netlify/Vercel/etc
+    "https://bibiunipan.github.io",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=origins,  # ou ["*"] para todos (não recomendado em produção)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
