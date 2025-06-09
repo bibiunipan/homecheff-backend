@@ -89,3 +89,8 @@ def detalhes_receita(nome: str = Query(..., description="Nome exato da receita")
         if r["nome"].lower() == nome.lower():
             return r
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
