@@ -22,6 +22,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.options("/{rest_of_path:path}")
+async def preflight_handler():
+    return {}
+    
 ARQUIVO_RECEITAS = os.path.join(os.path.dirname(__file__), "receitas.json")
 
 # Função para converter "1 hora e 20 minutos" ou "40 minutos" em minutos inteiros
