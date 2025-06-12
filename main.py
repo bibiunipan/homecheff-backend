@@ -25,6 +25,10 @@ app.add_middleware(
 @app.options("/{rest_of_path:path}")
 async def preflight_handler():
     return {}
+
+@app.options("/detalhes_receita")
+async def preflight_detalhes():
+    return {}
     
 ARQUIVO_RECEITAS = os.path.join(os.path.dirname(__file__), "receitas.json")
 
