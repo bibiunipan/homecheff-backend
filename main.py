@@ -49,6 +49,10 @@ def tempo_para_minutos(tempo_str: str) -> int:
         minutos = int(match_minutos.group(1))
 
     return horas * 60 + minutos
+    
+def normalizar(texto):
+    return unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8').lower()
+
 
 # Carregar receitas da lista dentro do JSON
 with open(ARQUIVO_RECEITAS, 'r', encoding='utf-8') as f:
@@ -67,14 +71,15 @@ def buscar_receitas(
         if nome and nome.lower() not in r['nome'].lower():
             continue
 
-        # Checa ingrediente parcial
-        if ingrediente:
-            lista_ingredientes = [i.strip() for i in ingrediente.split(",")]
-            if not all(
-                any(ing.lower() in i.lower() for i in r.get('ingredientes', []))
-                for ing in lista_ingredientes
-            ):
-                continue
+       # Checa ingrediente parcial (com normalização)
+    if ingrediente:
+        lista_ingredientes = [i.strip() for i in ingrediente.split(",")]
+        if not all(
+            any(normalizar(ing) in normalizar(i) for i in r.get('ingredientes', []))
+            for ing in lista_ingredientes
+         ):
+            continue
+
 
         # Checa tempo de preparo convertendo para minutos
         if tempo_max:
