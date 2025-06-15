@@ -2,8 +2,12 @@
   "receitas": [
     {
       "nome": "Arroz com Feijão",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "40 minutos",
+      "restricao": ["Lactose","Sem restricoes","glutem"],
       "ingredientes": [
         "2 xícaras de arroz",
         "2 xícaras de feijão",
@@ -22,8 +26,12 @@
     },
     {
       "nome": "Estrogonofe de Frango",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "30 minutos",
+      "restricao": ["Sem restricoes","glutem"],
       "ingredientes": [
         "500g de peito de frango cortado em cubos",
         "1 cebola picada",
@@ -43,8 +51,12 @@
     },
     {
       "nome": "Bolo de Cenoura com Cobertura de Chocolate",
-      "tipo_refeicao": ["Lanche", "Sobremesa"],
+      "tipo_refeiçao": [
+        "Lanche",
+        "Sobremesa"
+      ],
       "tempo_preparo": "50 minutos",
+      "restricao": [],
       "ingredientes": [
         "3 cenouras médias",
         "3 ovos",
@@ -67,7 +79,11 @@
     },
     {
       "nome": "Peixe Assado com Legumes",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "restricao": ["Sem restricoes","glutem","Lactose"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "45 minutos",
       "ingredientes": [
         "4 filés de peixe",
@@ -88,7 +104,11 @@
     },
     {
       "nome": "Carne de Panela com Legumes",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "restricao": ["Sem restricoes","Lactose","glutem"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "1 hora",
       "ingredientes": [
         "500g de carne em cubos",
@@ -110,7 +130,11 @@
     },
     {
       "nome": "Lombo Suíno Assado com Batatas",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "restricao": ["Sem restricoes","Lactose","glutem"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "1 hora e 20 minutos",
       "ingredientes": [
         "1kg de lombo suíno",
@@ -130,7 +154,11 @@
     },
     {
       "nome": "Salada de Grão-de-Bico",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "restricao": ["Vegana", "Vegetariana","Lactose","glutem"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "25 minutos",
       "ingredientes": [
         "2 xícaras de grão-de-bico cozido",
@@ -147,7 +175,11 @@
     },
     {
       "nome": "Carne Moída com Abóbora",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "restricao": ["Sem restricoes"],
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "35 minutos",
       "ingredientes": [
         "400g de carne moída",
@@ -164,31 +196,40 @@
       ]
     },
     {
-      "nome": "Pão de Queijo",
-      "tipo_refeicao": ["Lanche", "Café da manhã"],
+      "nome": "Pão de queijo",
+      "tipo_refeiçao": [
+        "Lanche",
+        "Café da manhã"
+      ],
       "tempo_preparo": "1 hora",
+      "restricao": ["Sem restricoes"],
       "ingredientes": [
         "500 g de polvilho doce",
         "250 ml de leite integral",
         "1 colher/sopa rasa de sal",
-        "1 prato cheio (350 g) de queijo meia cura e/ou mussarela ralado",
+        "1 prato cheio (350 g) de queijo meia cura e/ou mussarela ralado no ralador (quanto mais queijo, mais gostoso o pão vai ficar)",
         "1 ou 2 ovos",
         "1/2 copo de óleo",
         "1 pacote de queijo ralado parmesão"
       ],
       "modo_preparo": [
-        "Coloque o leite e o óleo em uma panela para esquentar e desligue assim que começar a ferver.",
-        "Em uma tigela, misture o polvilho e o sal, despeje o conteúdo quente e misture com colher e depois com a mão.",
-        "Adicione o queijo ralado e os ovos, misturando bem.",
-        "Verifique a textura da massa e ajuste com mais ovo ou polvilho, se necessário.",
-        "Modele bolinhas e coloque em assadeira com espaço entre elas.",
-        "Asse em forno médio (230°C) até dourar."
+        "Primeiro, coloque o leite e o óleo em uma panela pra esquentar, desligue o fogo imediatamente assim que começar a ferver (você verá umas bolinhas do leite subindo).",
+        "Em uma tigela grande, coloque o polvilho e o sal, e misture bem, logo em seguida, despeje o conteúdo da panela ainda quente, misture bem, primeiro com uma colher e depois com a mão.",
+        "Em seguida coloque o queijo ralado e um pouco do queijo do prato e também 1 ovo, continue misturando bem.",
+        "Coloque o resto do queijo e verifique se a massa esta com uma textura boa, nem muito oleosa e nem muito seca.",
+        "Se você sentir que está muito seca, coloque outro ovo, se ela ficar oleosa, coloque mais um pouco de polvilho.",
+        "Agora é só fazer bolinhas e colocar na assadeira, deixando um pequeno espaço entre um pão e o outro.",
+        "Deixe no forno em temperatura média (230°) até dourar um pouco."
       ]
     },
     {
-      "nome": "Lasanha à Bolonhesa",
-      "tipo_refeicao": ["almoço", "jantar"],
+      "nome": "Lasanha á bolonhesa",
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
       "tempo_preparo": "50 minutos",
+      "restricao": ["Sem restricoes"],
       "ingredientes": [
         "500 g de massa de lasanha",
         "500 g de carne moída",
@@ -196,6 +237,7 @@
         "3 colheres de manteiga",
         "3 colheres de farinha de trigo",
         "500 g de presunto",
+        "500 g de mussarela",
         "500 g de mussarela",
         "2 copos de leite",
         "1 cebola ralada",
@@ -205,12 +247,594 @@
         "1 pacote de queijo ralado"
       ],
       "modo_preparo": [
-        "Cozinhe a massa conforme as instruções, coloque em refratário com água gelada e reserve.",
-        "Refogue alho, cebola, carne moída e molho de tomate por 3 minutos, reserve.",
-        "Derreta manteiga, acrescente farinha, leite e creme de leite, mexendo até engrossar.",
-        "Monte camadas: massa, presunto, molho branco, molho bolonhesa, mussarela, queijo ralado.",
-        "Repita as camadas e finalize com queijo ralado.",
-        "Asse em forno médio por 40 minutos."
+        "Cozinhe a massa segundo as orientações do fabricante, despeje em um refratário com água gelada para não grudar e reserve.",
+        "Refogue o alho, a cebola, a carne moída, o molho de tomate, deixe cozinhar por 3 minutos e reserve.",
+        "Derreta a margarina, coloque as 3 colheres de farinha de trigo e mexa.",
+        "Despeje o leite aos poucos e continue mexendo.",
+        "Por último, coloque o creme de leite, mexa por 1 minuto e desligue o fogo.",
+        "Despeje uma parte do molho à bolonhesa em um refratário, a metade da massa, a metade do presunto, a metade da mussarela, todo o molho branco e o restante da massa.",
+        "Repita as camadas até a borda do recipiente.",
+        "Finalize com o queijo ralado e leve ao forno alto (220° C), preaquecido, por cerca de 20 minutos."
+      ]
+    },
+    {
+      "nome": "Macarrão alho e óleo",
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
+      "tempo_preparo": "14 min",
+      "restricao": ["Sem restricoes"],
+      "ingredientes": [
+        "1 pacote de macarrão 500 g ",
+        "1/2 tablete de manteiga (não use margarina)",
+        "1 colher (sopa) de azeite extra virgem",
+        "ervas (manjericão, orégano, salsa, cebolinha, tomilho, a gosto)",
+        "Sal a gosto",
+        "1 dente de alho"
+      ],
+      "modo_preparo": [
+        "Cozinhe o macarrão",
+        "Na frigideira quente coloque a manteiga, o azeite, e alho",
+        "Colocar o maarrão na frigideira o sal a gosto e as ervas",
+        "Sirva o macarrão e coloque ervas a gosto em cima."
+      ]
+    },
+    {
+      "nome": "Macarrão á bolosenha",
+      "tipo_refeiçao": [
+        "almoço",
+        "jantar"
+      ],
+      "tempo_preparo": "45 minutos",
+      "restricao": ["Sem restricoes"],
+      "ingredientes": [
+        "1 Cebola",
+        "1 colher de sopa de azeite de oliva",
+        "5 azeitonas verdes picadas",
+        "2 latas de molho de tomate pronto",
+        "500g de Macarrão",
+        "500g de Carne Moída",
+        "Queijo Mussarela ralado",
+        "Sal",
+        "Tempero a gosto"
+      ],
+      "modo_preparo": [
+        "Pique a cebola, refogue por alguns minutos em uma panela com azeite até dourar a cebola, mexendo para não queimar.",
+        "Misture a carne moída, deixe cozinhar por alguns minutos.",
+        "Coloque na panela da carne, o molho de tomate, tempero e sal a gosto e deixe cozinhar por 30 minutos",
+        "Prepare o macarrão, misture o molho ao macarrão e sirva.",
+        "Acompanhamento sugerido: queijo ralado"
+      ]
+    },
+    {
+      "nome": "Pão de Queijo Low Carb",
+
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "40 minutos",
+      "restricao": ["Sem restricoes"],
+      "ingredientes": [
+        "1 xícara polvilho azedo (ou doce ou tapioca)",
+        "4 fatias muçarela picada",
+        "5 colheres de sopa creme de ricota (requeijão)"
+      ],
+      "modo_preparo": [
+        "Misture o polvilho azedo, o creme de ricota e a muçarela picada.",
+        "Mexa com uma colher e depois sove a massa no próprio recipiente até ficar homogênea.",
+        "Acrescente uma pitada de sal e sove mais um pouco.",
+        "Unte uma assadeira com manteiga ou azeite.",
+        "Modele bolinhas com a massa e disponha na assadeira, deixando espaço entre elas.",
+        "Preaqueça o forno a 180ºC por 10 minutos, asse por 15-20 minutos ou até dourar.",
+        "Depois, aumente a temperatura para 200ºC."
+      ]
+    },
+    {
+      "nome": "Bolo de Chocolate Low Carb",
+      "restricao": ["Lactose","glutem","Vegetariana","Sem restricoes"],
+      "tipo_refeicao": [
+        "Sobremesa",
+        "Lanche"
+      ],
+      "tempo_preparo": "45 minutos",
+      "ingredientes": [
+        "4 ovos",
+        "4 colheres de sopa óleo de coco",
+        "5 colheres de sopa xilitol ou açúcar de coco",
+        "1 xícara cacau em pó",
+        "1 xícara água",
+        "100 g farinha de amêndoas",
+        "1 colher fermento em pó"
+      ],
+      "modo_preparo": [
+        "Bata todos os ingredientes no liquidificador, adicionando o fermento por último e misturando com uma colher.",
+        "Se quiser, acrescente nozes ou coco ralado.",
+        "Unte a forma com óleo de coco e cacau em pó.",
+        "Asse em forno médio por cerca de 30 minutos ou até a massa assar."
+      ]
+    },
+    {
+      "nome": "Panqueca Fit Banana",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "10 minutos",
+      "restricao": ["Vegetariana","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "2 ovos",
+        "1 banana",
+        "Azeite para untar"
+      ],
+      "modo_preparo": [
+        "Bata os ingredientes no liquidificador ou mixer.",
+        "Aqueça uma frigideira com um fio de azeite.",
+        "Despeje a massa, tampe e cozinhe em fogo baixo.",
+        "Doure dos dois lados e sirva com acompanhamentos de sua preferência."
+      ]
+    },
+    {
+      "nome": "Brigadeiro de banana",
+      "tipo_refeiecao": [
+        "Sobremesa",
+        "Lanche"
+      ],
+      "tempo_preparo": "20 minutos",
+      "restricao": ["Vegetariana","Sem restricoes"],
+      "ingredientes": [
+        "1 banana-nanica madura",
+        "2 colheres de sopa de cacau 70% em pó",
+        "10 colheres de sopa de leite em pó integral"
+      ],
+      "modo_preparo": [
+        "Aqueça a banana no micro-ondas por 30 segundos.",
+        "Amasse a banana com um garfo em um bowl.",
+        "Misture o cacau e, em seguida, o leite em pó até ficar homogêneo.",
+        "Leve à geladeira por pelo menos 15 minutos antes de servir."
+      ]
+    },
+    {
+      "nome": "Bolinho de banana",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "30 minutos",
+      "restricao": ["Vegetariana","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "2 bananas maduras",
+        "1 xícara de aveia em flocos",
+        "1 ovo",
+        "1 colher de sopa de mel (opcional)",
+        "1 colher de chá de canela em pó",
+        "1/2 colher de chá de fermento em pó",
+        "Uma pitada de sal",
+        "Nozes ou castanhas picadas (opcional)"
+      ],
+      "modo_preparo": [
+        "Preaqueça o forno a 180°C e prepare a forma de muffins (unte ou use forminhas de papel).",
+        "Amasse as bananas até virar purê.",
+        "Misture o ovo até ficar homogêneo.",
+        "Adicione aveia, mel, canela, fermento e sal; misture bem. Acrescente nozes ou castanhas, se quiser.",
+        "Distribua a massa nas forminhas, preenchendo 2/3.",
+        "Asse por 15-20 minutos até dourar e firmar.",
+        "Deixe esfriar antes de desenformar e servir."
+      ]
+    },
+    {
+      "nome": "Salada Morna de Grão-de-Bico com Legumes",
+      "tipo_refeicao": [
+        "Salada quente"
+      ],
+      "tempo_preparo": "25 minutos",
+      "restricao": ["Vegana", "Vegetariana","Lactose","glutem","Sem restricoes"],
+      "ingredientes": [
+        "1 xícara de grão-de-bico cozido",
+        "1 abobrinha picada em cubos",
+        "1 cenoura em rodelas finas",
+        "1/2 cebola roxa picada em fatias finas",
+        "1/2 pimentão vermelho picado",
+        "1 dente de alho picado",
+        "Azeite de oliva extra virgem",
+        "Suco de 1/2 limão",
+        "Sal e pimenta-do-reino a gosto",
+        "Salsinha ou coentro picado para finalizar"
+      ],
+      "modo_preparo": [
+        "Em uma frigideira grande, aqueça um fio de azeite e refogue o alho e a cebola.",
+        "Adicione a cenoura, a abobrinha e o pimentão, refogando por 5 minutos.",
+        "Junte o grão-de-bico, tempere com sal, pimenta e suco de limão.",
+        "Refogue por mais 2 minutos, desligue e finalize com salsinha ou coentro."
+      ]
+    },
+    {
+      "nome": "Panqueca de Banana com Aveia",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "15 minutos",
+      "restricao": ["Vegetariana","Lactose","glutem","Sem restricoes"],
+      "ingredientes": [
+        "1 banana madura amassada",
+        "1 ovo",
+        "2 colheres de sopa de aveia em flocos",
+        "1 pitada de canela (opcional)",
+        "1 colher de chá de óleo de coco"
+      ],
+      "modo_preparo": [
+        "Misture bemt todos os ingredientes.",
+        "Aqueça uma frigideira com óleo de coco.",
+        "Coloque metade da massa e cozinhe por 2-3 minutos de cada lado.",
+        "Repita com o restante da massa e sirva."
+      ]
+    },
+    {
+      "nome": "Quinoa com Frango e Legumes",
+      "tipo_refeicao": [
+        "Prato principal"
+      ],
+      "tempo_preparo": "30 minutos",
+      "restricao": ["Lactose","Sem restricoes"],
+      "ingredientes": [
+        "1/2 xícara de quinoa",
+        "1 peito de frango em cubos",
+        "1/2 cenoura ralada",
+        "1/2 abobrinha picada",
+        "1 dente de alho picado",
+        "1/2 cebola picada",
+        "Sal e pimenta-do-reino a gosto",
+        "Azeite de oliva",
+        "Salsinha ou cebolinha picada"
+      ],
+      "modo_preparo": [
+        "Lave e cozinhe a quinoa. Reserve.",
+        "Refogue alho e cebola com azeite, adicione o frango.",
+        "Acrescente os legumes e cozinhe até ficarem macios.",
+        "Misture com a quinoa e finalize com salsinha ou cebolinha."
+      ]
+    },
+    {
+      "nome": "Suco Detox de Abacaxi com Hortelã",
+      "tipo_refeicao": [
+        "Bebida detox"
+      ],
+      "tempo_preparo": "5 minutos",
+      "restricao": ["Vegana", "Vegetariana","Lactose","glutem","Sem restricoes"],
+      "ingredientes": [
+        "2 fatias de abacaxi",
+        "1 punhado de hortelã",
+        "Suco de 1/2 limão",
+        "1 copo de água gelada ou água de coco",
+        "Gelo a gosto"
+      ],
+      "modo_preparo": [
+        "Bata todos os ingredientes no liquidificador.",
+        "Coe se desejar e sirva gelado."
+      ]
+    },
+    {
+      "nome": "Bolinho Assado de Brocólis com Ricota",
+      "tipo_refeicao": [
+        "Lanche"
+      ],
+      "tempo_preparo": "35 minutos",
+      "restricao": ["Vegetariana","glutem","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "1 xícara de brocólis cozido e picado",
+        "1/2 xícara de ricota amassada",
+        "1 ovo",
+        "2 colheres de sopa de aveia em flocos",
+        "1 colher de sopa de cebola ralada",
+        "Sal, pimenta-do-reino e orégano a gosto",
+        "Azeite para untar"
+      ],
+      "modo_preparo": [
+        "Misture todos os ingredientes até formar uma massa.",
+        "Modele os bolinhos e disponha em assadeira untada.",
+        "Asse em forno a 200°C por 25 minutos, virando na metade do tempo."
+      ]
+    },
+    {
+      "nome": "Brigadeiro Fit de Cacau",
+      "tipo_refeicao": "Sobremesa",
+      "tempo_preparo": "15 minutos",
+      "restricao":["glutem","Vegetariana","Sem restricoes"],
+      "ingredientes": [
+        "1 xícara de leite em pó desnatado",
+        "2 colheres de sopa de cacau em pó 100%",
+        "1/4 de xícara de água quente",
+        "1 colher de chá de óleo de coco",
+        "Adoçante natural a gosto"
+      ],
+      "modo_preparo": [
+        "Misture leite em pó, cacau e adoçante",
+        "Adicione água quente aos poucos, depois o óleo de coco.",
+        "Modele os brigadeiros e leve à geladeira por 30 minutos."
+      ]
+    },
+    {
+      "nome": "Omelete de Espinafre com Tomate e Queijo Branco",
+      "tipo_refeicao": "Jantar leve",
+      "tempo_preparo": "10 minutos",
+      "restricao": ["Sem restricoes","Vegetariana","glutem"],
+      "ingredientes": [
+        "2 ovos",
+        "1/2 xícara de espinafre picado",
+        "1/2 tomate picado",
+        "2 colheres de sopa de queijo branco",
+        "Sal e pimenta a gosto",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Bata os ovos e tempere.",
+        "Refogue espinafre e tomate, adicione os ovos e o queijo.",
+        "Cozinhe tampado por 4 minutos e sirva."
+      ]
+    },
+    {
+      "nome": "Chips de Cenoura Assados",
+      "tipo_refeicao": "Lanche",
+      "tempo_preparo": "40 minutos",
+      "restricao":["Vegana","Vegetariana","glutem","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "2 cenouras médias",
+        "1 colher de sopa de azeite",
+        "Sal a gosto",
+        "Pimenta ou páprica (opcional)"
+      ],
+      "modo_preparo": [
+        "Fatie as cenouras finamente.",
+        "Misture com azeite e temperos.",
+        "Asse a 180°C por 30-40 minutos, virando na metade do tempo."
+      ]
+    },
+    {
+      "nome": "Iogurte Natural com Frutas e Granola Caseira",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "10 minutos",
+      "restricao":["Sem restricoes","Vegetariana","glutem"],
+      "ingredientes": [
+        "1 pote de iogurten natural",
+        "1/2 banana picada",
+        "3 morangos fatiados",
+        "1 colher de sopa de granola",
+        "1 colher de chá de mel (opcional)",
+        "Sementes de chia ou linhaça (opcional)"
+      ],
+      "modo_preparo": [
+        "Coloque o iogurte em um recipiente.",
+        "Adicione frutas, granola, mel e sementes.",
+        "Sirva imediatamente."
+      ]
+    },
+    {
+      "nome": "Panqueca Vegana sem Glúten",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "20 minutos",
+      "restricao": ["glutem","Vegana","Vegetariana","Lactose"],
+      "ingredientes": [
+        "1 xícara de farinha de arroz",
+        "1 colher de sopa de linhaça",
+        "1 xícara de água",
+        "1 colher de chá de fermento"
+      ],
+      "modo_preparo": [
+        "Misture todos os ingredientes até formar uma massa homôgenea.",
+        "Aqueça uma frigideira e faça as panquecas dos dois lados."
+      ]
+    },
+    {
+      "nome": "Leite de Amêndoas Caseiro",
+      "tipo_refeicao": "Bebida",
+      "tempo_preparo": "10 minutos (mais 8h de molho)",
+      "restricao":["glutem","Vegana","Vegetariana","Lactose"],
+      "ingredientes": [
+        "1 xícara de amêndoas",
+        "3 xícaras de água"
+      ],
+      "modo_preparo": [
+        "Deixe as amêndoas de molho por 8h.",
+        "Bata com água e coe com um pano fino."
+      ]
+    },
+    {
+      "nome": "Bolo de Banana Sem Glúten e Sem Lactose",
+      "tipo_refeicao": [
+        "Sobremesa",
+        "Lanche"
+      ],
+      "tempo_preparo": "45 minutos",
+      "restricao": ["glutem","Lactose","Vegetariana"],
+      "ingredientes": [
+        "3 bananas maduras",
+        "2 ovos",
+        "1 xícara de farinha de arroz",
+        "1/2 xícara de óleo de coco",
+        "1 colher de chá de fermento"
+      ],
+      "modo_preparo": [
+        "Bata os ingredientes no liquidificador",
+        "Coloque em forma untada e asse a 180°C por 35 minutos."
+      ]
+    },
+    {
+      "nome": "Hambúguer de Grão-de-Bico",
+      "tipo_refeicao": [
+        "Almoço",
+        "Jantar"
+      ],
+      "tempo_preparo": "30 minutos",
+      "restricao":["glutem","Vegana","Vegetariana","Sem restricoes","Lactose"],
+      "ingredientes": [
+        "1 xícara de grão-de-bico cozido",
+        "1/2 cebola",
+        "1 dente de alho",
+        "2 colheres de aveia sem glúten"
+      ],
+      "modo_preparo": [
+        "Amasse o grão-de-bico",
+        "Misture os outros ingredientes",
+        "Molde e grelhe os hambúrgueres"
+      ]
+    },
+    {
+      "nome": "Arroz de Couve-Flor",
+      "tipo_refeicao": [
+        "Almoço",
+        "Jantar"
+      ],
+      "tempo_preparo": "15 minutos",
+      "restricao":["Vegana","Vegetariana","glutem","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "1 couve-flor média",
+        "1 colher de sopa de azeite",
+        "Sal a gosto"
+      ],
+      "modo_preparo": [
+        "Triture a couve-flor",
+        "Refogue com azeite e tempere"
+      ]
+    },
+    {
+      "nome": "Cookies de Aveia e Banana",
+      "tipo_refeicao": [
+        "Lanche",
+        "Sobremesa"
+      ],
+      "tempo_preparo": "30 minutos",
+      "restricao":["glutem","Lactose","Vegana","Vegetariana","Sem restricoes"],
+      "ingredientes": [
+        "2 bananas maduras",
+        "1 xícara de aveia sem glúten"
+      ],
+      "modo_preparo": [
+        "Amasse as bananas.",
+        "Misture com aveia",
+        "Molde os cookies",
+        "Asse por 20 minutos a 180°C."
+      ]
+    },
+    {
+      "nome": "Torta de Legumes com Massa de Grão-de-Bico",
+      "tipo_refeicao": [
+        "Almoço",
+        "Jantar"
+      ],
+      "tempo_preparo": "35 minutos",
+      "restricao":["glutem","Lactose","Vegana","Vegetariana","Sem restricoes"],
+      "ingredientes": [
+        "1 xícara de grão-de-bico",
+        "Legumes variados",
+        "Azeite",
+        "Sal"
+      ],
+      "modo_preparo": [
+        "Bata o grão-de-bico",
+        "Forre uma forma",
+        "Adicione os legumes e leve ao forno por 25 minutos."
+      ]
+    },
+    {
+      "nome": "Pão de Batata Doce",
+      "tipo_refeicao": [
+        "Lanche",
+        "Café da manhã"
+      ],
+      "tempo_preparo": "35 minutos",
+      "restricao":["glutem","Lactose","Sem restricoes","Vegana","Vegetariana","Sem restricoes"],
+      "ingredientes": [
+        "1 xícara de purê de batata doce",
+        "1/2 xícara de polvilho doce",
+        "1 colher de sopa de azeite",
+        "Sal"
+      ],
+      "modo_preparo": [
+        "Misture os ingredientes",
+        "Molde bolinhas",
+        "Asse por 25 minutos"
+      ]
+    },
+    {
+      "nome": "Mingau de Aveia com Leite de Coco",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "10 minutos",
+      "restricao":["glutem","Lactose","Vegana","Vegetariana"],
+      "ingredientes": [
+        "1 xícara de leite de coco",
+        "3 colheres de aveia sem glúten",
+        "Frutas"
+      ],
+      "modo_preparo": [
+        "Misture leite e aveia e cozinhe até engrossar",
+        "Sirva com frutas"
+      ]
+    },
+    {
+      "nome": "Macarrão de Abobrinha com Molho de Tomate",
+      "tipo_refeicao": [
+        "Almoço",
+        "Jantar"
+      ],
+      "tempo_preparo": "15 minutos",
+      "restricao":["glutem","Vegana","Vegetariana","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "1 abobrinha",
+        "Molho de tomate caseiro",
+        "Azeite"
+      ],
+      "modo_preparo": [
+        "Corte a abobrinha em tiras",
+        "Refogue e adicione o molho"
+      ]
+    },
+    {
+      "nome": "Smoothie de Frutas com Leite de Coco",
+      "tipo_refeicao": [
+        "Café da manhã",
+        "Lanche"
+      ],
+      "tempo_preparo": "5 minutos",
+      "restricao":["glutem","Vegana","Vegetariana","Lactose","Sem restricoes"],
+      "ingredientes": [
+        "1 banana",
+        "1/2 xícara de frutas vermelhas",
+        "1 xícara de leite de coco"
+      ],
+      "modo_preparo": [
+        "Bata tudo no liquidificador e sirva gelado"
+      ]
+    },
+    {
+      "nome": "Pizza com Massa de Quinoa",
+      "tipo_refeicao": [
+        "Almoço",
+        "Jantar"
+      ],
+      "tempo_preparo": "30 minutos",
+      "restricao":["glutem","Vegetariana","Vegana","Lactose"],
+      "ingredientes": [
+        "1 xícara de quinoa cozida",
+        "1 colher de azeite",
+        "Legumes e molho para cobertura"
+      ],
+      "modo_preparo": [
+        "Misture a quinoa com azeite",
+        "Molde a massa",
+        "Asse por 10 minutos",
+        "Adicione cobertura",
+        "Asse por mais 15 minutos"
       ]
     }
   ]
