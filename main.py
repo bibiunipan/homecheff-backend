@@ -72,14 +72,14 @@ def buscar_receitas(
             continue
 
        # Checa ingrediente parcial (com normalização)
+    for r in receitas:
     if ingrediente:
         lista_ingredientes = [i.strip() for i in ingrediente.split(",")]
         if not all(
             any(normalizar(ing) in normalizar(i) for i in r.get('ingredientes', []))
             for ing in lista_ingredientes
-         ):
-            continue
-
+        ):
+            continue  # <- agora está certo
 
         # Checa tempo de preparo convertendo para minutos
         if tempo_max:
