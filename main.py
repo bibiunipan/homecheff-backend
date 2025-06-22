@@ -152,12 +152,34 @@ async def buscar_receitas(
 
     return filtradas
 
-# Detalhes da receita
 @app.get("/detalhes_receita")
-def detalhes_receita(nome: str = Query(..., description="Nome exato da receita")):
+async def detalhes_receita(nome: str = Query(..., description="Nome exato da receita"), email: Optional[str] = None):
+    restricao = None
+    substituicoes_dict = {}
+
+    if email:
+        restricao = await buscar_restricao_usuario(email)
+        if restricao:
+            substituicoes_dict = SUBSTITUICOES.get(restricao.lower(), {})
+
     for r in receitas:
         if r["nome"].lower() == nome.lower():
-            return r
+            detalhes = r.copy()
+
+            substituicoes = []
+            if substituicoes_dict:
+                for ing in detalhes["ingredientes"]:
+                    ing_norm = normalizar(ing)
+                    substituido = None
+                    for proibido, alternativo in substituicoes_dict.items():
+                        if proibido in ing_norm:
+                            substituido = ing.replace(proibido, alternativo)
+                            break
+                    substituicoes.append(substituido or ing)
+
+            detalhes["substituicoes"] = substituicoes
+            return detalhes
+
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
 
 # Execução local (opcional)
