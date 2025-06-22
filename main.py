@@ -90,7 +90,7 @@ async def buscar_restricao_usuario(email: str) -> Optional[str]:
             headers=headers
         )
     if response.status_code == 200 and response.json():
-        return response.json()[0].get("restricao")
+        return response.json()[0].get("restricoes")
     return None
 
 # Endpoint principal de busca com filtro inteligente
