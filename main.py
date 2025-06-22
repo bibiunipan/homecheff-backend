@@ -172,19 +172,27 @@ async def detalhes_receita(nome: str = Query(..., description="Nome exato da rec
             if substituicoes_dict:
                 for ing in detalhes["ingredientes"]:
                     ing_norm = normalizar(ing)
-                    substituido = None
+                    substituido = ing
                     for proibido, alternativo in substituicoes_dict.items():
-                        pattern = r'\b' + re.escape(proibido) + r'\b'
-                        if re.search(pattern, ing_norm):
-                            substituido = re.sub(pattern, alternativo, ing, flags=re.IGNORECASE)
-                            print(f"Substituindo '{ing}' por '{substituido}' para restrição '{restricao}'")
+                        proibido_norm = normalizar(proibido)
+                        if proibido_norm in ing_norm:
+                            # Substitui o texto original mantendo formatação original
+                            substituido = re.sub(
+                                re.escape(proibido), 
+                                alternativo, 
+                                ing, 
+                                flags=re.IGNORECASE
+                            )
                             break
-                    substituicoes.append(substituido or ing)
+                    substituicoes.append(substituido)
+            else:
+                substituicoes = detalhes["ingredientes"]
 
             detalhes["substituicoes"] = substituicoes
             return detalhes
 
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
+
 
 # Execução local (opcional)
 if __name__ == "__main__":
