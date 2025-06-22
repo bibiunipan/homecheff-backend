@@ -3,8 +3,8 @@ from typing import Optional
 import json
 import os
 import re
-import httpx
 import unicodedata
+import httpx
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -133,10 +133,12 @@ async def buscar_receitas(
             for ing in r["ingredientes"]:
                 ing_norm = normalizar(ing)
                 for proibido, alternativo in substituicoes.items():
-                    if proibido in ing_norm:
+                    pattern = r'\b' + re.escape(proibido) + r'\b'
+                    if re.search(pattern, ing_norm):
+                        substituicao_sugestao = re.sub(pattern, alternativo, ing, flags=re.IGNORECASE)
                         sugestoes.append({
                             "ingrediente_original": ing,
-                            "sugestao_substituicao": ing.replace(proibido, alternativo)
+                            "sugestao_substituicao": substituicao_sugestao
                         })
                         break
 
@@ -172,8 +174,10 @@ async def detalhes_receita(nome: str = Query(..., description="Nome exato da rec
                     ing_norm = normalizar(ing)
                     substituido = None
                     for proibido, alternativo in substituicoes_dict.items():
-                        if proibido in ing_norm:
-                            substituido = ing.replace(proibido, alternativo)
+                        pattern = r'\b' + re.escape(proibido) + r'\b'
+                        if re.search(pattern, ing_norm):
+                            substituido = re.sub(pattern, alternativo, ing, flags=re.IGNORECASE)
+                            print(f"Substituindo '{ing}' por '{substituido}' para restrição '{restricao}'")
                             break
                     substituicoes.append(substituido or ing)
 
