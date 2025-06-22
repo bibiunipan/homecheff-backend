@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Query, HTTPException
-from typing import List, Optional
+from typing import Optional
 import json
 import os
 import re
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+import httpx
+import unicodedata
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -16,7 +16,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # ou ["*"] para todos (não recomendado em produção)
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -26,73 +26,133 @@ app.add_middleware(
 async def preflight_handler():
     return {}
 
-    
+# Caminho do JSON
 ARQUIVO_RECEITAS = os.path.join(os.path.dirname(__file__), "receitas.json")
 
-# Função para converter "1 hora e 20 minutos" ou "40 minutos" em minutos inteiros
-def tempo_para_minutos(tempo_str: str) -> int:
-    tempo_str = tempo_str.lower()
-    horas = 0
-    minutos = 0
-
-    # Pega quantidades de horas (ex: "1 hora" ou "2 horas")
-    match_horas = re.search(r"(\d+)\s*hora", tempo_str)
-    if match_horas:
-        horas = int(match_horas.group(1))
-
-    # Pega quantidades de minutos (ex: "20 minutos", "14 min")
-    match_minutos = re.search(r"(\d+)\s*min", tempo_str)
-    if match_minutos:
-        minutos = int(match_minutos.group(1))
-
-    return horas * 60 + minutos
-    
-def normalizar(texto):
-    return unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8').lower()
-
-
-# Carregar receitas da lista dentro do JSON
+# Leitura do JSON
 with open(ARQUIVO_RECEITAS, 'r', encoding='utf-8') as f:
     data = json.load(f)
     receitas = data["receitas"]
 
+# Funções auxiliares
+def tempo_para_minutos(tempo_str: str) -> int:
+    tempo_str = tempo_str.lower()
+    horas = 0
+    minutos = 0
+    match_horas = re.search(r"(\d+)\s*hora", tempo_str)
+    if match_horas:
+        horas = int(match_horas.group(1))
+    match_minutos = re.search(r"(\d+)\s*min", tempo_str)
+    if match_minutos:
+        minutos = int(match_minutos.group(1))
+    return horas * 60 + minutos
+
+def normalizar(texto):
+    return unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8').lower()
+
+# Supabase
+SUPABASE_URL = "https://SEU_PROJETO.supabase.co"
+SUPABASE_API_KEY = "SUA_API_KEY"
+
+SUBSTITUICOES = {
+    "lactose": {
+        "leite": "leite vegetal",
+        "queijo": "queijo vegano",
+        "manteiga": "margarina vegetal",
+        "creme de leite": "creme vegetal"
+    },
+    "gluten": {
+        "farinha de trigo": "farinha de arroz",
+        "pão": "pão sem glúten",
+        "macarrão": "macarrão sem glúten"
+    },
+    "vegano": {
+        "carne": "proteína vegetal",
+        "ovo": "ovo de linhaça",
+        "leite": "leite vegetal",
+        "mel": "melado"
+    },
+    "vegetariano": {
+        "carne": "soja texturizada",
+        "frango": "tofu",
+        "peixe": "palmito"
+    }
+}
+
+async def buscar_restricao_usuario(email: str) -> Optional[str]:
+    headers = {
+        "apikey": SUPABASE_API_KEY,
+        "Authorization": f"Bearer {SUPABASE_API_KEY}",
+    }
+    async with httpx.AsyncClient() as client:
+        response = await client.get(
+            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",
+            headers=headers
+        )
+    if response.status_code == 200 and response.json():
+        return response.json()[0].get("restricao")
+    return None
+
+# Endpoint principal de busca com filtro inteligente
 @app.get("/buscar_receitas")
-def buscar_receitas(
-    nome: Optional[str] = Query(None, description="Nome parcial para busca"),
-    ingrediente: Optional[str] = Query(None, description="Ingrediente para busca parcial"),
+async def buscar_receitas(
+    nome: Optional[str] = Query(None, description="Nome parcial da receita"),
+    ingrediente: Optional[str] = Query(None, description="Ingrediente parcial"),
     tempo_max: Optional[int] = Query(None, description="Tempo máximo de preparo em minutos"),
+    email: Optional[str] = Query(None, description="Email do usuário para aplicar restrições")
 ):
+    restricao = None
+    substituicoes = {}
+
+    if email:
+        restricao = await buscar_restricao_usuario(email)
+        if restricao:
+            substituicoes = SUBSTITUICOES.get(restricao.lower(), {})
+
     filtradas = []
+
     for r in receitas:
-        # Checa nome (parcial, case insensitive)
         if nome and nome.lower() not in r['nome'].lower():
             continue
 
-       # Checa ingrediente parcial (com normalização)
-    for r in receitas:
-    if ingrediente:
-        lista_ingredientes = [i.strip() for i in ingrediente.split(",")]
-        if not all(
-            any(normalizar(ing) in normalizar(i) for i in r.get('ingredientes', []))
-            for ing in lista_ingredientes
-        ):
-            continue  # <- agora está certo
+        if ingrediente:
+            lista_ingredientes = [i.strip() for i in ingrediente.split(",")]
+            if not all(
+                any(normalizar(ing) in normalizar(i) for i in r.get('ingredientes', []))
+                for ing in lista_ingredientes
+            ):
+                continue
 
-        # Checa tempo de preparo convertendo para minutos
         if tempo_max:
             tempo_receita = tempo_para_minutos(r.get('tempo_preparo', '0'))
             if tempo_receita > tempo_max:
                 continue
 
-        filtradas.append(r)
-    
-    nomes = [r["nome"] for r in filtradas]
+        sugestoes = []
+        if substituicoes:
+            for ing in r["ingredientes"]:
+                ing_norm = normalizar(ing)
+                for proibido, alternativo in substituicoes.items():
+                    if proibido in ing_norm:
+                        sugestoes.append({
+                            "ingrediente_original": ing,
+                            "sugestao_substituicao": ing.replace(proibido, alternativo)
+                        })
+                        break
 
-    if not nomes:
+        filtradas.append({
+            "nome": r["nome"],
+            "ingredientes": r["ingredientes"],
+            "tempo_preparo": r.get("tempo_preparo", ""),
+            "sugestoes_substituicoes": sugestoes
+        })
+
+    if not filtradas:
         raise HTTPException(status_code=404, detail="Nenhuma receita encontrada com os filtros.")
-    
-    return nomes
 
+    return filtradas
+
+# Detalhes da receita
 @app.get("/detalhes_receita")
 def detalhes_receita(nome: str = Query(..., description="Nome exato da receita")):
     for r in receitas:
@@ -100,6 +160,7 @@ def detalhes_receita(nome: str = Query(..., description="Nome exato da receita")
             return r
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
 
+# Execução local (opcional)
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
