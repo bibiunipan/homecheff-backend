@@ -84,17 +84,15 @@ async def buscar_restricao_usuario(email: str) -> Optional[str]:
         "apikey": SUPABASE_API_KEY,
         "Authorization": f"Bearer {SUPABASE_API_KEY}",
     }
+
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",
+            f"{SUPABASE_URL}/rest/v1/usuários?e-mail=eq.{email}",
             headers=headers
         )
 
-    print("📨 E-mail consultado:", email)
-    print("🔁 Resposta Supabase:", response.status_code, response.json())
-
     if response.status_code == 200 and response.json():
-        return response.json()[0].get("restricoes")
+        return response.json()[0].get("restrições")  # <- também está com acento
     return None
 
 # Endpoint principal de busca com filtro inteligente
