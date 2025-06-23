@@ -160,21 +160,31 @@ async def detalhes_receita(nome: str = Query(...), email: Optional[str] = None):
 
     if email:
         restricao = await buscar_restricao_usuario(email)
+        print(f"\n▶ Email: {email}")
+        print(f"▶ Restrição detectada: {restricao}")
         if restricao:
             substituicoes_dict = SUBSTITUICOES.get(restricao.lower(), {})
-
+            print(f"▶ Substituições aplicáveis: {substituicoes_dict}")
+    
     for r in receitas:
         if r["nome"].lower() == nome.lower():
             detalhes = r.copy()
-
             substituicoes = []
+
+            print(f"\n🔍 Verificando ingredientes da receita: {detalhes['nome']}")
             for ing in detalhes["ingredientes"]:
                 substituido = ing
                 ing_norm = normalizar(ing)
+                print(f"\n- Ingrediente original: {ing}")
+                print(f"  ↳ Normalizado: {ing_norm}")
+                
                 for proibido, alternativo in substituicoes_dict.items():
-                    if normalizar(proibido) in ing_norm:
-                        # Substitui somente o termo original
+                    proibido_norm = normalizar(proibido)
+                    print(f"    ↳ Verificando se '{proibido_norm}' está em '{ing_norm}'")
+
+                    if proibido_norm in ing_norm:
                         substituido = re.sub(re.escape(proibido), alternativo, ing, flags=re.IGNORECASE)
+                        print(f"    ✅ Substituído: {substituido}")
                         break
                 substituicoes.append(substituido)
 
@@ -182,7 +192,6 @@ async def detalhes_receita(nome: str = Query(...), email: Optional[str] = None):
             return detalhes
 
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
-
 
 
 # Execução local (opcional)
