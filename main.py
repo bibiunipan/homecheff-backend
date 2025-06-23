@@ -156,7 +156,6 @@ async def buscar_receitas(
 
 @app.get("/detalhes_receita")
 async def detalhes_receita(nome: str = Query(..., description="Nome exato da receita"), email: Optional[str] = None):
-    restricao = None
     substituicoes_dict = {}
 
     if email:
@@ -167,26 +166,22 @@ async def detalhes_receita(nome: str = Query(..., description="Nome exato da rec
     for r in receitas:
         if r["nome"].lower() == nome.lower():
             detalhes = r.copy()
-
             substituicoes = []
-            if substituicoes_dict:
-                for ing in detalhes["ingredientes"]:
-                    ing_norm = normalizar(ing)
-                    substituido = ing
-                    for proibido, alternativo in substituicoes_dict.items():
-                        proibido_norm = normalizar(proibido)
-                        if proibido_norm in ing_norm:
-                            # Substitui o texto original mantendo formatação original
-                            substituido = re.sub(
-                                re.escape(proibido), 
-                                alternativo, 
-                                ing, 
-                                flags=re.IGNORECASE
-                            )
-                            break
-                    substituicoes.append(substituido)
-            else:
-                substituicoes = detalhes["ingredientes"]
+
+            for ing in detalhes["ingredientes"]:
+                ing_norm = normalizar(ing)
+                substituido = ing
+                for proibido, alternativo in substituicoes_dict.items():
+                    proibido_norm = normalizar(proibido)
+                    # Verifica correspondência exata de palavra (para evitar conflitos)
+                    if re.search(r'\b' + re.escape(proibido_norm) + r'\b', ing_norm):
+                        substituido = re.sub(
+                            re.compile(re.escape(proibido), re.IGNORECASE),
+                            alternativo,
+                            ing
+                        )
+                        break
+                substituicoes.append(substituido)
 
             detalhes["substituicoes"] = substituicoes
             return detalhes
