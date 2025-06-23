@@ -86,9 +86,13 @@ async def buscar_restricao_usuario(email: str) -> Optional[str]:
     }
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{SUPABASE_URL}/rest/v1/usuarios?e-mail=eq.{email}",
+            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",
             headers=headers
         )
+
+    print("📨 E-mail consultado:", email)
+    print("🔁 Resposta Supabase:", response.status_code, response.json())
+
     if response.status_code == 200 and response.json():
         return response.json()[0].get("restricoes")
     return None
