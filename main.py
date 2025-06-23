@@ -155,7 +155,7 @@ async def buscar_receitas(
     return filtradas
 
 @app.get("/detalhes_receita")
-async def detalhes_receita(nome: str = Query(..., description="Nome exato da receita"), email: Optional[str] = None):
+async def detalhes_receita(nome: str = Query(...), email: Optional[str] = None):
     substituicoes_dict = {}
 
     if email:
@@ -166,20 +166,15 @@ async def detalhes_receita(nome: str = Query(..., description="Nome exato da rec
     for r in receitas:
         if r["nome"].lower() == nome.lower():
             detalhes = r.copy()
-            substituicoes = []
 
+            substituicoes = []
             for ing in detalhes["ingredientes"]:
-                ing_norm = normalizar(ing)
                 substituido = ing
+                ing_norm = normalizar(ing)
                 for proibido, alternativo in substituicoes_dict.items():
-                    proibido_norm = normalizar(proibido)
-                    # Verifica correspondência exata de palavra (para evitar conflitos)
-                    if re.search(r'\b' + re.escape(proibido_norm) + r'\b', ing_norm):
-                        substituido = re.sub(
-                            re.compile(re.escape(proibido), re.IGNORECASE),
-                            alternativo,
-                            ing
-                        )
+                    if normalizar(proibido) in ing_norm:
+                        # Substitui somente o termo original
+                        substituido = re.sub(re.escape(proibido), alternativo, ing, flags=re.IGNORECASE)
                         break
                 substituicoes.append(substituido)
 
@@ -187,6 +182,7 @@ async def detalhes_receita(nome: str = Query(..., description="Nome exato da rec
             return detalhes
 
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
+
 
 
 # Execução local (opcional)
