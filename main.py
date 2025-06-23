@@ -79,18 +79,18 @@ SUBSTITUICOES = {
     }
 }
 
-async def buscar_restricao_usuario(email: str) -> Optional[str]:
+async def buscar_restricao_usuario(email: str) -> Optional[list]:
     headers = {
         "apikey": SUPABASE_API_KEY,
         "Authorization": f"Bearer {SUPABASE_API_KEY}",
     }
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",  # ✅ 'usuarios' sem acento, 'email' sem hífen
+            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",  # 'usuarios' sem acento, 'email' sem hífen
             headers=headers
         )
     if response.status_code == 200 and response.json():
-        return response.json()[0].get("restricoes")  # ✅ exatamente como está na coluna
+        return response.json()[0].get("restricoes")  # retorna lista, ex: ["lactose", "gluten"]
     return None
 
 
@@ -108,7 +108,12 @@ async def buscar_receitas(
     if email:
         restricao = await buscar_restricao_usuario(email)
         if restricao:
-            substituicoes = SUBSTITUICOES.get(restricao.lower(), {})
+            # Agora restricao pode ser lista, então juntamos substituições de todas as restrições
+            if isinstance(restricao, list):
+                for r in restricao:
+                    substituicoes.update(SUBSTITUICOES.get(r.lower(), {}))
+            else:
+                substituicoes = SUBSTITUICOES.get(restricao.lower(), {})
 
     filtradas = []
 
@@ -164,9 +169,13 @@ async def detalhes_receita(nome: str = Query(...), email: Optional[str] = None):
         print(f"\n▶ Email recebido: {email}")
         print(f"▶ Restrição detectada: {restricao}")
         if restricao:
-            substituicoes_dict = SUBSTITUICOES.get(restricao.lower(), {})
+            if isinstance(restricao, list):
+                for r in restricao:
+                    substituicoes_dict.update(SUBSTITUICOES.get(r.lower(), {}))
+            else:
+                substituicoes_dict = SUBSTITUICOES.get(restricao.lower(), {})
             print(f"▶ Substituições carregadas: {substituicoes_dict}")
-    
+
     for r in receitas:
         if r["nome"].lower() == nome.lower():
             detalhes = r.copy()
@@ -199,3 +208,4 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
+
