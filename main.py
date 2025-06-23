@@ -84,16 +84,15 @@ async def buscar_restricao_usuario(email: str) -> Optional[str]:
         "apikey": SUPABASE_API_KEY,
         "Authorization": f"Bearer {SUPABASE_API_KEY}",
     }
-
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{SUPABASE_URL}/rest/v1/usuarios?e-mail=eq.{email}",  # <-- 'usuarios' sem acento, 'e-mail' com hífen
+            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",  # ✅ 'usuarios' sem acento, 'email' sem hífen
             headers=headers
         )
-
     if response.status_code == 200 and response.json():
-        return response.json()[0].get("restrições")  # <-- coluna com acento
+        return response.json()[0].get("restricoes")  # ✅ exatamente como está na coluna
     return None
+
 
 # Endpoint principal de busca com filtro inteligente
 @app.get("/buscar_receitas")
