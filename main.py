@@ -86,7 +86,7 @@ async def buscar_restricao_usuario(email: str) -> Optional[str]:
     }
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{SUPABASE_URL}/rest/v1/usuarios?email=eq.{email}",
+            f"{SUPABASE_URL}/rest/v1/usuarios?e-mail=eq.{e-mail}",
             headers=headers
         )
     if response.status_code == 200 and response.json():
@@ -160,39 +160,38 @@ async def detalhes_receita(nome: str = Query(...), email: Optional[str] = None):
 
     if email:
         restricao = await buscar_restricao_usuario(email)
-        print(f"\n▶ Email: {email}")
+        print(f"\n▶ Email recebido: {email}")
         print(f"▶ Restrição detectada: {restricao}")
         if restricao:
             substituicoes_dict = SUBSTITUICOES.get(restricao.lower(), {})
-            print(f"▶ Substituições aplicáveis: {substituicoes_dict}")
+            print(f"▶ Substituições carregadas: {substituicoes_dict}")
     
     for r in receitas:
         if r["nome"].lower() == nome.lower():
             detalhes = r.copy()
             substituicoes = []
 
-            print(f"\n🔍 Verificando ingredientes da receita: {detalhes['nome']}")
             for ing in detalhes["ingredientes"]:
                 substituido = ing
-                ing_norm = normalizar(ing)
-                print(f"\n- Ingrediente original: {ing}")
-                print(f"  ↳ Normalizado: {ing_norm}")
-                
-                for proibido, alternativo in substituicoes_dict.items():
-                    proibido_norm = normalizar(proibido)
-                    print(f"    ↳ Verificando se '{proibido_norm}' está em '{ing_norm}'")
+                ing_normalizado = normalizar(ing)
 
-                    if proibido_norm in ing_norm:
-                        substituido = re.sub(re.escape(proibido), alternativo, ing, flags=re.IGNORECASE)
-                        print(f"    ✅ Substituído: {substituido}")
-                        break
+                for proibido, alternativo in substituicoes_dict.items():
+                    proibido_normalizado = normalizar(proibido)
+
+                    # Debug para cada comparação
+                    print(f"🔍 Verificando '{ing}' com '{proibido}'")
+                    if proibido_normalizado in ing_normalizado:
+                        # Tenta substituir usando a forma original (sem remover acentos)
+                        substituido = re.sub(proibido, alternativo, ing, flags=re.IGNORECASE)
+                        print(f"✅ Substituição aplicada: '{ing}' → '{substituido}'")
+                        break  # só uma substituição por ingrediente
+
                 substituicoes.append(substituido)
 
             detalhes["substituicoes"] = substituicoes
             return detalhes
 
     raise HTTPException(status_code=404, detail="Receita não encontrada.")
-
 
 # Execução local (opcional)
 if __name__ == "__main__":
